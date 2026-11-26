@@ -1,0 +1,36 @@
+
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Staging model for transaction data"
+
+    columns:
+      - name: transaction_id
+        description: "Unique transaction identifier"
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer identifier"
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+
+      - name: amount
+        description: "Transaction amount"
+        data_tests:
+          - not_null
+
+      - name: status
+        description: "Transaction status"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['SUCCESS', 'FAILED', 'PENDING']
+
+      

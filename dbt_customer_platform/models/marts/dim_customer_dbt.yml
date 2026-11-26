@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_customer_dbt
+    description: "Gold customer dimension containing validated customer information."
+
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer."
+        data_tests:
+          - not_null
+          - unique
+
+      - name: customer_name
+        description: "Customer's name."
+        data_tests:
+          - not_null
+
+      - name: city
+        description: "Customer's city."
+
+      - name: email
+        description: "Customer's email address."
+
+      - name: email_missing_flag
+        description: "Indicates whether the customer's email is missing."

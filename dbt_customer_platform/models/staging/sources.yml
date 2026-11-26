@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: silver
+    catalog: customer_data_platform
+    schema: silver
+
+    tables:
+      - name: customers
+      - name: transactions

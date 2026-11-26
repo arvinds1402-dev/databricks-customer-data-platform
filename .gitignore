@@ -1,0 +1,23 @@
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# Credentials
+.env
+.env.*
+!.env.example
+profiles.yml
+
+# IDE
+.vscode/
+
+# Temporary files
+*.log
+*.tmp
